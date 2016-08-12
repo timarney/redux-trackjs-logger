@@ -1,7 +1,8 @@
 # Redux TrackJS Action Logger
+Logs user actions to TrackJS so you can replay them later.
 
 #Setup
-Index.html enter your TrackJS token
+index.html enter your TrackJS token
 
 npm install
 npm start
