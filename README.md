@@ -1,4 +1,4 @@
-# redux-trackjs-logger
+# Redux TrackJS Action Logger
 
 #Setup
 Index.html enter your TrackJS token
@@ -20,6 +20,9 @@ const loggedData = [{
 
 loggedData.map((item) => store.dispatch(item))
 ```
+#Sample error message
+
+![alt text](https://github.com/timarney/redux-trackjs-logger/blob/master/images/error.png "Error Message")
 
 #Todo
 I'm looking into being able to import via Redux Dev Tools
