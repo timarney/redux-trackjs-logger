@@ -32,18 +32,5 @@ function render () {
   )
 }
 
-
 render()
 store.subscribe(render)
-
-/* Test reloading the data - i.e. copy data from TrackJS error message
-const loggedData = [{
-  'type': 'INCREMENT'
-}, {
-  'type': 'INCREMENT'
-}, {
-  'type': 'INCREMENT'
-}]
-
-loggedData.map((item) => store.dispatch(item))
-*/

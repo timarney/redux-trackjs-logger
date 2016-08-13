@@ -23,6 +23,9 @@ function setPayload (payload, error) {
 let actions = []
 
 export function configureTracker () {
+  if (window._trackJs.token === 'YOUR_TOKEN') {
+    alert('You need to add your TrackJS token to index.html')
+  }
   window.trackJs.configure({
     onError: (payload, error) => setPayload(payload, error)
   })
