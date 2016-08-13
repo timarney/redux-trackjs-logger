@@ -1,13 +1,16 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { createStore, applyMiddleware, compose } from 'redux'
-import logActions from './util/logger'
+import { configureTracker, logActions } from './util/logger'
 import Counter from './components/Counter'
 import counter from './reducers'
 
 function devTools () {
   return typeof window === 'object' && typeof window.devToolsExtension !== 'undefined' ? window.devToolsExtension() : f => f
 }
+
+// setup TrackJS as the logger
+configureTracker()
 
 let initialState = 5
 
@@ -17,7 +20,6 @@ const store = createStore(counter, initialState, compose(
   ))
 
 const rootEl = document.getElementById('root')
-
 
 function render () {
   ReactDOM.render(

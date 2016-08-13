@@ -4,20 +4,8 @@
     <title>Redux TrackJS demo</title>
     <!-- BEGIN TRACKJS -->
     <script type="text/javascript">
-    window.actions = []
-
-    window.getActions = function (payload, error) {
-      let actions = window.actions
-      payload.message = JSON.stringify([{'message': payload.message, 'actions': actions}])
-      return true
-    }
     // MAKE SURE YOU ENTER YOUR TOKEN!!
-    window._trackJs = {
-      token: 'YOUR_TOKEN',
-      onError: function (payload, error){
-        return window.getActions(payload, error)
-      }
-    }
+    window._trackJs = { token: 'YOUR_TOKEN' }
     </script>
     <script type="text/javascript" src="https://cdn.trackjs.com/releases/current/tracker.js"></script>
     <!-- END TRACKJS -->
@@ -26,6 +14,6 @@
     <div style="color:red;">Error will throw when you increment to number 7</div>
     <div id="root">
     </div>
-<script src="/static/bundle.js"></script>
+    <script src="/static/bundle.js"></script>
   </body>
 </html>
