@@ -19,7 +19,7 @@ This all started here - *@react30* https://twitter.com/timarney/status/764192482
 In a real app this simple setup likley won't work see: *@mdiordiev* https://twitter.com/mdiordiev/status/764528409590501377 that said this is promising https://www.youtube.com/watch?v=cbXLohVbzNI&feature=youtu.be&t=1122
 
 #For more inspiration 
-check out *@jrullmann* https://medium.com/@jrullmann/redux-error-reports-concept-ab85b658f53e#.6z3oouu71
+Check out *@jrullmann* https://medium.com/@jrullmann/redux-error-reports-concept-ab85b658f53e#.6z3oouu71
 <hr>
 
 *Sample Error Message*
