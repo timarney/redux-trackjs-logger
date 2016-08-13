@@ -1,0 +1,11 @@
+[{
+    "type": "INCREMENT"
+  }, {
+    "type": "DECREMENT"
+  }, {
+    "type": "DECREMENT"
+  }, {
+    "type": "DECREMENT"
+  }, {
+    "type": "DECREMENT"
+  }]
