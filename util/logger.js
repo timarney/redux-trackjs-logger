@@ -1,9 +1,18 @@
+import axios from 'axios'
+
 function setPayload (payload, error) {
-  // @todo save json file of actions
-  const filename = 'mydata'
-  console.log(actions)
+  const filename = `data${payload.timestamp}`
+  // save json file of actions
+  axios.post('/savejson', { actions, filename })
+    .then(function (response) {
+      console.log(response)
+    })
+    .catch(function (error) {
+      console.log(error)
+    })
+
   payload.console.push({
-    message: `actions logged to ${window.location.origin}/${filename}.json`,
+    message: `actions logged to ${window.location.origin}/logs/${filename}.json`,
     severity: 'log',
     timestamp: payload.timestamp
   }
