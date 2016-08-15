@@ -1,5 +1,7 @@
 #The Inspiration
-I was listening to @react30 ... at this point https://youtu.be/JTFYyK3yFmE?t=698 :bulb: :bulb: :bulb:
+I was listening to @react30 ... at about this point https://youtu.be/JTFYyK3yFmE?t=698 :bulb: :bulb: :bulb:
+
+So I tried something and tweeted about it https://twitter.com/timarney/status/764192482535940096 and here we are (**check the note about the future below**).
 
 #What
 Error tracking services such as TrackJS offer great insights into where errors happen.  They give us stack traces, network information, grouped error reports and much more.
@@ -40,8 +42,6 @@ When an error is thrown it is captured by TrackJS. The users actions up to the e
 
 
 #Notes
-This all started here - *@react30* https://twitter.com/timarney/status/764192482535940096
-
 This hasn't been tested on a real app potential issue: *@mdiordiev* https://twitter.com/mdiordiev/status/764528409590501377
 
 #Related Projects
