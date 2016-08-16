@@ -6,9 +6,10 @@ So I tried something and tweeted about it https://twitter.com/timarney/status/76
 #What
 Error tracking services such as TrackJS offer great insights into where errors happen.  They give us stack traces, network information, grouped error reports and much more.
 
-What's lacking is the ability to get your app back to the state where an error occured so you can debug a production error in your local environment.
+Redux + Redux Dev Tools give us the ability to step-through state and toggle actions. We can replay and even export / import state when **developing locally**.
 
-Redux + Redux Dev Tools have demonstrated the ability to step-through state and toggle actions. We can replay and even export / import state when developing.  Amazing things.
+If an error is thrown in production it would be amaizing to get the `Error Report` and also be able to see what actions happened leading up to that error.  Essentially getting your local development enviroment / app **back to the state where the error** occured so you can debug locally.
+
 
 #The Goal
 This project aims to combine Error tracking with Redux Dev Tools to capture errors and user actions from a production setting.  
