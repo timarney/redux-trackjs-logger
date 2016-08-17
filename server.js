@@ -4,8 +4,10 @@ var webpackHotMiddleware = require('webpack-hot-middleware')
 var config = require('./webpack.config')
 var JsonDB = require('node-json-db')
 
-var app = new (require('express'))()
+var express = require('express')
+var app = express()
 var port = 3000
+var path = require('path');
 
 var compiler = webpack(config)
 app.use(webpackDevMiddleware(compiler, { noInfo: true, publicPath: config.output.publicPath }))
@@ -16,6 +18,9 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({
   extended: true
 }))
+
+
+app.use('/logs', express.static(path.join(__dirname + '/logs')));
 
 // for demo purposes don't do this
 app.post('/savejson', function (req, res) {
