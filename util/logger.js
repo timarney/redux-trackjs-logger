@@ -3,8 +3,10 @@ let jsonURL = 'https://api.myjson.com/bins'
 let token = window._trackJs.token
 let trackJsCaptureUrl = `https://capture.trackjs.com/capture?token=${token}`
 let actions = []
+let supressNextScriptError = false
 
 function trackError (payload) {
+  supressNextScriptError = true
   // save actions to a json file (myjson.com)
   axios.post(jsonURL, actions)
     .then(function (response) {
@@ -31,6 +33,10 @@ export function configureTracker () {
 
   window.trackJs.configure({
     onError: (payload, error) => {
+      if(payload.message.indexOf('Script error') >= 0 && supressNextScriptError){
+        supressNextScriptError = false
+        return false
+      }
       trackError(payload)
       return false // We will send the payload ourselves
     }
