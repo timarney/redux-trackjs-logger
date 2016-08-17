@@ -6,7 +6,7 @@ let actions = []
 
 function trackError (payload) {
   // save actions to a json file (myjson.com)
-  axios.post(jsonURL, {actions})
+  axios.post(jsonURL, actions)
     .then(function (response) {
       sendError(response, payload)
     })
