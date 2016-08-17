@@ -2,7 +2,10 @@ import axios from 'axios'
 
 function setPayload (payload, error) {
   const filename = `data${payload.timestamp}`
-  // save json file of actions
+  // save json file of actions [{"type":"INCREMENT"},{"type":"INCREMENT"},{"type":"DECREMENT"}]
+
+  // Note: modify this to however you want to save your file
+  // demo uses server.js
   axios.post('/savejson', { actions, filename })
     .then(function (response) {
       console.log(response)
