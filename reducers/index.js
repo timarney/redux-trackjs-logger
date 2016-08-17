@@ -1,6 +1,6 @@
 export default function counter (state = 0, action) {
   if (state === 7) {
-    throw new Error('Track This Error!')
+    throw new Error('Track This Error + Actions to JSON!')
   }
 
   switch (action.type) {
