@@ -21,7 +21,7 @@ This project aims to combine Error tracking with Redux Dev Tools to capture erro
 4. Redux Dev Tools replay the actions recreate the state to the point where the error happened for debugging
 
 #How
-When an error is thrown it is captured by TrackJS. The users actions up to the error point **get logged to a JSON file (via myjson.com) **. The error in TrackJS **references the log file** which can be downloaded and imported into a local environment via Redux Dev Tools.
+When an error is thrown it is captured by TrackJS. The users actions up to the error point **get logged to a JSON file** (via myjson.com). The error in TrackJS **references the log file** which can be downloaded and imported into a local environment via Redux Dev Tools.
 
 1. Dowload the reported file
 2. Import via the Redux Dev Tools
@@ -36,7 +36,7 @@ When an error is thrown it is captured by TrackJS. The users actions up to the e
 <hr>
 *Sample Error Message*
 
-![alt text](https://github.com/timarney/redux-trackjs-logger/blob/master/images/error-log.png "Error Message")
+![alt text](https://github.com/timarney/redux-trackjs-logger/blob/master/images/error-log.png "Error Message!")
 
 #The Future?
 ![alt text](http://demo.line37.com/images/dev-tools.png "Idea")
