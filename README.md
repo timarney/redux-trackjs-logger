@@ -1,3 +1,14 @@
+#UPDATE
+**Direct Integration with Dev Tools** 
+See https://twitter.com/mdiordiev/status/766286593166548992 and this branch **https://github.com/timarney/redux-trackjs-logger/tree/remote-dev-tools** (WIP).  
+
+The current implementation of this saves the 'Report Actions' into memory (on whatever server you posted the actions to).  
+
+1. POST the actions to the remotedev-server i.e. http://localhost:8000 (could be an external host)
+2. The server will return the report id
+3. Loading the local app with the report id (http://localhost:3000?remotedev_report=1234) appended will replay app to the 'error' state (Thanks @mdiordiev)
+
+Futher info here https://github.com/zalmoxisus/remotedev-server/pull/20
 
 #The Goal
 This project aims to combine Error tracking with Redux Dev Tools to capture errors and user actions from a production setting.  
@@ -23,9 +34,6 @@ When an error is thrown it is captured by TrackJS. The users actions up to the e
 
 #Adding to your app
 At some point I'll likley drop this on NPM but for now see https://gist.github.com/timarney/c9d5ffc5708c355bc0a97775b1506219
-
-#Direct Integration with Dev Tools 
-Integration with the Dev Tools is on it's way. See https://twitter.com/mdiordiev/status/766286593166548992 and this branch https://github.com/timarney/redux-trackjs-logger/tree/remote-dev-tools
 
 <hr>
 *Sample Error Message*
