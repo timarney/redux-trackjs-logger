@@ -1,6 +1,6 @@
 import axios from 'axios'
 let jsonURL = 'http://localhost:8000'
-let reportURL = `${jsonURL}?remotedev_report=`
+let reportURL = 'http://localhost:3000?remotedev_report='
 let token = window._trackJs.token
 let trackJsCaptureUrl = `https://capture.trackjs.com/capture?token=${token}`
 let actions = []
@@ -8,11 +8,11 @@ let supressNextScriptError = false
 
 function trackError (payload) {
   supressNextScriptError = true
-  // save actions to a json file (myjson.com)
-  const postData = {type: 'ACTIONS',payload: actions }
+  // save actions to remote-dev-tools
+  const postData = { type: 'ACTIONS', payload: JSON.stringify(actions) }
   axios.post(jsonURL, postData)
     .then(function (response) {
-      // console.log(response)
+      console.log(response)
       sendError(response, payload)
     })
     .catch(function (err) {
@@ -22,6 +22,7 @@ function trackError (payload) {
 
 function sendError (response, payload) {
   let filename = `${reportURL}${response.data.id}`
+  console.log(`report will be available at ${filename}`)
   // create a reference to the json file and send to TrackJS
   let data = {message: filename, severity: 'log', timestamp: payload.timestamp}
   payload.console.push(data)
