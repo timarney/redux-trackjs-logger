@@ -10,7 +10,7 @@ The current implementation of this saves the 'Report Actions' into memory (on wh
 
 Futher info here https://github.com/zalmoxisus/remotedev-server/pull/20
 
-Also if you don't use an Error Tracking service this will still work.  Just use the Middleware to catch your error and post the remotedev-server
+Also if you don't use an Error Tracking service this will still work.  Just use the Middleware, catch your errors and Post the actions to the remotedev-server
 
 Roughly:
 ```
