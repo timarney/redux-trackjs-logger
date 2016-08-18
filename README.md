@@ -10,9 +10,9 @@ The current implementation of this saves the 'Report Actions' into memory (on wh
 
 Futher info here https://github.com/zalmoxisus/remotedev-server/pull/20
 
-Also if you don't use an Error Tracking service this will still work.  Just use the Middleware, catch your errors and Post the actions to the remotedev-server
+**Note:** If you don't use an Error Tracking service this will still work.  Just use the Middleware, catch your errors and Post the actions to the remotedev-server.  This particular demo integrates with TrackJS.
 
-Roughly:
+In which case the setup would be roughly:
 ```
 let actions = []
 
@@ -73,16 +73,12 @@ I was listening to @react30 ... at about this point https://youtu.be/JTFYyK3yFmE
 
 So I tried something and tweeted about it https://twitter.com/timarney/status/764192482535940096 and here we are (**check the note about the future below**).
 
-#What
+#Why?
 Error tracking services such as TrackJS offer great insights into where errors happen.  They give us stack traces, network information, grouped error reports and much more.
 
 Redux + Redux Dev Tools give us the ability to step-through state and toggle actions. We can replay and even export / import state when **developing locally**.
 
 If an error is thrown in production it would be amaizing to get the `Error Report` and also be able to see what actions happened leading up to that error.  Essentially getting your local development enviroment / app **back to the state where the error** occured so you can debug locally.
-
-
-#The Future?
-![alt text](http://demo.line37.com/images/dev-tools.png "Idea")
 
 #Notes
 This hasn't been tested on a real app potential issue: *@mdiordiev* https://twitter.com/mdiordiev/status/764528409590501377
