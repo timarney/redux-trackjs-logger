@@ -50,7 +50,7 @@ This project aims to combine Error tracking with Redux Dev Tools to capture erro
 4. Redux Dev Tools replay the actions recreate the state to the point where the error happened for debugging
 
 #How
-When an error is thrown it is captured by TrackJS. The users actions up to the error point **get logged to a JSON file** (via myjson.com). The error in TrackJS **references the log file** which can be downloaded and imported into a local environment via Redux Dev Tools 
+When an error is thrown it is captured by TrackJS. The users actions up to the error point get logged for later retrieval. The error in TrackJS references the log which can imported into a local environment via Redux Dev Tools 
 
 1. Dowload the reported file
 2. Import via the Redux Dev Tools
@@ -80,10 +80,12 @@ Error tracking services such as TrackJS offer great insights into where errors h
 
 Redux + Redux Dev Tools give us the ability to step-through state and toggle actions. We can replay and even export / import state when **developing locally**.
 
-If an error is thrown in production it would be amaizing to get the `Error Report` and also be able to see what actions happened leading up to that error.  Essentially getting your local development enviroment / app **back to the state where the error** occured so you can debug locally.
+If an error is thrown in production it would be amazing to get the `Error Report` and also be able to see what actions happened leading up to that error.  Essentially getting your local development enviroment / app **back to the state where the error** occured so you can debug locally.
 
 #Notes
 This hasn't been tested on a real app potential issue: *@mdiordiev* https://twitter.com/mdiordiev/status/764528409590501377
+
+We'll cross that bridge...
 
 #Related Projects
 I'm not the only one looking into this if you know of other projects let me know.
