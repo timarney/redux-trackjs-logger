@@ -1,6 +1,8 @@
 #UPDATE
 **Direct Integration with Dev Tools** 
-See https://twitter.com/mdiordiev/status/766286593166548992 and this branch **https://github.com/timarney/redux-trackjs-logger/tree/remote-dev-tools** (WIP).  
+See https://twitter.com/mdiordiev/status/766286593166548992 and this branch **https://github.com/timarney/redux-trackjs-logger/tree/remote-dev-tools** (WIP). 
+
+![alt text](https://github.com/timarney/redux-trackjs-logger/blob/remote-dev-tools/images/demo.gif "Demo")
 
 The current implementation of this saves the 'Report Actions' into memory (on whatever server you posted the actions to).  
 
