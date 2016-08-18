@@ -10,6 +10,34 @@ The current implementation of this saves the 'Report Actions' into memory (on wh
 
 Futher info here https://github.com/zalmoxisus/remotedev-server/pull/20
 
+Also if you don't use an Error Tracking service this will still work.  Just use the Middleware to catch your error and post the remotedev-server
+
+Roughly:
+```
+let actions = []
+
+export function logActions (stateSanitizer) {
+  return store => next => action => {
+    actions.push(action)
+    return next(action)
+  }
+}
+
+// catch your errors 
+// ... 
+// Post to remotedev-server
+
+const postData = { type: 'ACTIONS', payload: JSON.stringify(actions) }
+axios.post(jsonURL, postData)
+  .then(function (response) {
+    let filename = `${reportURL}${response.data.id}`
+    console.log(`report will be available at ${filename}`)
+  })
+  .catch(function (err) {
+    console.log(err)
+  })
+```
+
 #The Goal
 This project aims to combine Error tracking with Redux Dev Tools to capture errors and user actions from a production setting.  
 
