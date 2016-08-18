@@ -3,6 +3,9 @@ var webpackDevMiddleware = require('webpack-dev-middleware')
 var webpackHotMiddleware = require('webpack-hot-middleware')
 var config = require('./webpack.config')
 
+var remotedev = require('remotedev-server')
+remotedev({ hostname: 'localhost', port: 8000 })
+
 var express = require('express')
 var app = express()
 var port = 3000
