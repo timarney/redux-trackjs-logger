@@ -1,14 +1,7 @@
 #UPDATE
 **Direct Integration with Dev Tools** 
-See https://twitter.com/mdiordiev/status/766286593166548992 and this branch **https://github.com/timarney/redux-trackjs-logger/tree/remote-dev-tools** (WIP). 
-
-![alt text](https://github.com/timarney/redux-trackjs-logger/blob/remote-dev-tools/images/demo.gif "Demo")
-
-The current implementation of this saves the 'Report Actions' into memory (on whatever server you posted the actions to).  
-
-1. POST the actions to the remotedev-server i.e. http://localhost:8000 (could be an external host)
-2. The server will return the report id
-3. Loading the local app with the report id (http://localhost:3000?remotedev_report=1234) appended will replay app to the 'error' state (Thanks @mdiordiev)
+https://www.youtube.com/watch?v=GnmtOXGs50c
+**https://github.com/timarney/redux-trackjs-logger/tree/remote-dev-tools** (WIP). 
 
 Futher info here https://github.com/zalmoxisus/remotedev-server/pull/20
 
