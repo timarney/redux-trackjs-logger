@@ -1,37 +1,10 @@
 #UPDATE
-**Direct Integration with Dev Tools** 
-https://www.youtube.com/watch?v=GnmtOXGs50c
-**https://github.com/timarney/redux-trackjs-logger/tree/remote-dev-tools** (WIP). 
+⚡ **Direct Integration with Dev Tools** https://www.youtube.com/watch?v=GnmtOXGs50c
+[![IMAGE ALT TEXT](http://img.youtube.com/vi/GnmtOXGs50c/0.jpg)](http://www.youtube.com/watch?v=GnmtOXGs50c "Play Redux TrackJS Logger")
+
+See this branch **https://github.com/timarney/redux-trackjs-logger/tree/remote-dev-tools** . 
 
 Futher info here https://github.com/zalmoxisus/remotedev-server/pull/20
-
-**Note:** If you don't use an Error Tracking service this will still work.  Just use the Middleware, catch your errors and Post the actions to the remotedev-server.  This particular demo integrates with TrackJS.
-
-In which case the setup would be roughly:
-```
-let actions = []
-
-export function logActions (stateSanitizer) {
-  return store => next => action => {
-    actions.push(action)
-    return next(action)
-  }
-}
-
-// catch your errors 
-// ... 
-// Post to remotedev-server
-
-const postData = { type: 'ACTIONS', payload: JSON.stringify(actions) }
-axios.post(jsonURL, postData)
-  .then(function (response) {
-    let filename = `${reportURL}${response.data.id}`
-    console.log(`report will be available at ${filename}`)
-  })
-  .catch(function (err) {
-    console.log(err)
-  })
-```
 
 #The Goal
 This project aims to combine Error tracking with Redux Dev Tools to capture errors and user actions from a production setting.  
@@ -50,23 +23,14 @@ When an error is thrown it is captured by TrackJS. The users actions up to the e
 3. The actions are automatically replayed to get back to the error state
 4. Debug
 
+Note: 
+The master branch of this repo saves to a JSON file for import back to Dev Tools.  
+The remote-dev-tools branch integrates directly with Dev Tools and uses remotedev-server for saving the actions.
+
 #Setup
 1. Update index.html enter your TrackJS token
 2. npm install
 3. npm start
-
-#Adding to your app
-At some point I'll likley drop this on NPM but for now see https://gist.github.com/timarney/c9d5ffc5708c355bc0a97775b1506219
-
-<hr>
-*Sample Error Message*
-
-![alt text](https://github.com/timarney/redux-trackjs-logger/blob/master/images/error-log.png "Error Message!")
-
-#The Inspiration
-I was listening to @react30 ... at about this point https://youtu.be/JTFYyK3yFmE?t=698 :bulb: :bulb: :bulb:
-
-So I tried something and tweeted about it https://twitter.com/timarney/status/764192482535940096 and here we are (**check the note about the future below**).
 
 #Why?
 Error tracking services such as TrackJS offer great insights into where errors happen.  They give us stack traces, network information, grouped error reports and much more.
@@ -75,16 +39,10 @@ Redux + Redux Dev Tools give us the ability to step-through state and toggle act
 
 If an error is thrown in production it would be amazing to get the `Error Report` and also be able to see what actions happened leading up to that error.  Essentially getting your local development enviroment / app **back to the state where the error** occured so you can debug locally.
 
-#Notes
-This hasn't been tested on a real app potential issue: *@mdiordiev* https://twitter.com/mdiordiev/status/764528409590501377
+#The Inspiration
+I was listening to @react30 ... at about this point https://youtu.be/JTFYyK3yFmE?t=698 :bulb: :bulb: :bulb:
 
-We'll cross that bridge...
-
-#Related Projects
-I'm not the only one looking into this if you know of other projects let me know.
-
-* http://remotedev.io - https://www.youtube.com/watch?v=cbXLohVbzNI&feature=youtu.be&t=1122
-* redux-bug-reporter https://github.com/dtschust/redux-bug-reporter 
+So I tried something and tweeted about it https://twitter.com/timarney/status/764192482535940096 and here we are (**check the note about the future below**).
 
 #For more inspiration 
 Check out *@jrullmann* https://medium.com/@jrullmann/redux-error-reports-concept-ab85b658f53e#.6z3oouu71
